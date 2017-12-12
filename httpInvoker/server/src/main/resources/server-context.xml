@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean name="userRmiService" class="com.hsb.server.rmi.interfaces.impl.UserRmiServiceImpl"/>
+    <bean name="rmiTest" class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="service" ref="userRmiService" />
+        <property name="serviceName" value="userRmiServiceTest" />
+        <property name="serviceInterface" value="com.hsb.server.rmi.interfaces.UserRmiService"/>
+        <property name="registryPort" value="1021" />
+    </bean>
+
+    <bean name="userHttpService" class="com.hsb.server.httpinvoker.interfaces.impl.UserHttpServiceImpl"/>
+    <bean name="httpInvokerServiceExporter" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="userHttpService"/>
+        <property name="serviceInterface" value="com.hsb.server.httpinvoker.interfaces.UserHttpService"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/httpInvokerServiceExporter">httpInvokerServiceExporter</prop>
+            </props>
+        </property>
+    </bean>
+
+    <context:component-scan base-package="com.hsb.server"/>
+</beans>
