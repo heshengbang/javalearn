@@ -4,13 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hsb.java.httpInvoker</groupId>
-    <artifactId>httpInvoker</artifactId>
+    <groupId>com.hsb.java</groupId>
+    <artifactId>javalearn</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>server</module>
-        <module>client</module>
+        <module>annotationPractice</module>
+        <module>dynamicProxy</module>
+        <module>httpInvoker</module>
+        <module>threadPractice</module>
     </modules>
+
 
 </project>
