@@ -13,6 +13,7 @@
         <module>dynamicProxy</module>
         <module>httpInvoker</module>
         <module>threadPractice</module>
+        <module>oom</module>
     </modules>
 
 
