@@ -14,6 +14,7 @@
         <module>httpInvoker</module>
         <module>threadPractice</module>
         <module>oom</module>
+        <module>jni</module>
     </modules>
 
 
