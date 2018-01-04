@@ -62,4 +62,9 @@ Postgresql默认事务隔离级别也是读提交（Read committed）但考虑�
 19、你现在开发的项目中如何实现单点登录的？
 20、Object的常见方法有哪些？
 21、当你将一个自定义对象放入HashMap中时，需要注意什么？保证哈希值的唯一性的原理是什么？
+
+
+
+
 22、JNI的原理及其使用
+https://baike.baidu.com/item/JNI/9412164?fr=aladdin
