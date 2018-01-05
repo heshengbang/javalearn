@@ -68,3 +68,5 @@ Postgresql默认事务隔离级别也是读提交（Read committed）但考虑�
 
 22、JNI的原理及其使用
 https://baike.baidu.com/item/JNI/9412164?fr=aladdin
+
+23、slf4j的使用

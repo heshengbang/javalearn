@@ -15,6 +15,7 @@
         <module>threadPractice</module>
         <module>oom</module>
         <module>jni</module>
+        <module>jdk</module>
     </modules>
 
 
