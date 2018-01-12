@@ -50,6 +50,6 @@ public class MainTest {
     }
 
     public static void main(String[] args) {
-        test2();
+        test1();
     }
 }
