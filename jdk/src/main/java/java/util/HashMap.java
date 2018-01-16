@@ -640,7 +640,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
         int n, i;
         if ((tab = table) == null || (n = tab.length) == 0)
             n = (tab = resize()).length;
-        if ((p = tab[i = (n - 1) & hash]) == null)
+        if ((p = tab[i = (n - 1) & hash]) == null)//如果该hash值对应的enter有不存在，则新建
             tab[i] = newNode(hash, key, value, null);
         else {
             Node<K, V> e;
