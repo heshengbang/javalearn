@@ -1,8 +1,5 @@
 package com.hsb.java.thread;
 
-import com.hsb.thread.Bank;
-import com.hsb.thread.TransferRunnable;
-
 /*
  * Copyright ©2011-2017 hsb
  */

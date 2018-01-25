@@ -1,4 +1,4 @@
-package com.hsb.thread;
+package com.hsb.java.thread;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

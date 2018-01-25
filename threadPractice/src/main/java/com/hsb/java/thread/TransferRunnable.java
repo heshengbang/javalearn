@@ -1,4 +1,4 @@
-package com.hsb.thread;
+package com.hsb.java.thread;
 /*
  * Copyright ©2011-2017 hsb
  */
