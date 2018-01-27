@@ -151,7 +151,7 @@ public class Object {
      * The awakened thread will not be able to proceed until the current
      * thread relinquishes the lock on this object. The awakened thread will
      * compete in the usual manner with any other threads that might be
-     * actively competing to synchronize on this object; for example, the
+     * actively competing to objectsynch on this object; for example, the
      * awakened thread enjoys no reliable privilege or disadvantage in being
      * the next thread to lock this object.
      * <p>
@@ -183,7 +183,7 @@ public class Object {
      * The awakened threads will not be able to proceed until the current
      * thread relinquishes the lock on this object. The awakened threads
      * will compete in the usual manner with any other threads that might
-     * be actively competing to synchronize on this object; for example,
+     * be actively competing to objectsynch on this object; for example,
      * the awakened threads enjoy no reliable privilege or disadvantage in
      * being the next thread to lock this object.
      * <p>
@@ -226,7 +226,7 @@ public class Object {
      * </ul>
      * The thread <var>T</var> is then removed from the wait set for this
      * object and re-enabled for thread scheduling. It then competes in the
-     * usual manner with other threads for the right to synchronize on the
+     * usual manner with other threads for the right to objectsynch on the
      * object; once it has gained control of the object, all its
      * synchronization claims on the object are restored to the status quo
      * ante - that is, to the situation as of the time that the {@code wait}
