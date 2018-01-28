@@ -3,7 +3,6 @@ package com.hsb.java.thread.ecosphere.objectsynch;
 import java.util.ArrayList;
 
 public class Consumer implements Runnable{
-    private static final Object consumerLock = new Object();
     private final ArrayList<Object> list;
 
     public Consumer(ArrayList<Object> list) {
@@ -22,6 +21,19 @@ public class Consumer implements Runnable{
      */
     @Override
     public void run() {
+        // simple way but fool way for solve produce-consume question.
+//        while (true) {
+//            synchronized (list) {
+//                System.out.println(Thread.currentThread().getName() + " 获得执行权");
+//                if (list.size() > 0) {
+//                    System.out.println(Thread.currentThread().getName() + " 存量足够，准备消费操作");
+//                    list.remove(0);
+//                    System.out.println(Thread.currentThread().getName() + " 消费了一个对象 当前存量为：" + list.size());
+//                } else {
+//                    System.out.println(Thread.currentThread().getName() + " 存量不够，无法消费，当前存量为：" + list.size());
+//                }
+//            }
+//        }
         synchronized (list) {
             System.out.println(Thread.currentThread().getName() + " 获得执行权");
             while (true) {
