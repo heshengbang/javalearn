@@ -3,6 +3,7 @@ package com.hsb.java.thread.ecosphere.objectsynch;
 import java.util.ArrayList;
 
 public class Consumer implements Runnable{
+    private static final Object consumerLock = new Object();
     private final ArrayList<Object> list;
 
     public Consumer(ArrayList<Object> list) {
@@ -21,18 +22,25 @@ public class Consumer implements Runnable{
      */
     @Override
     public void run() {
-        while (true) {
-            synchronized (list) {
-                if (list.size() <= 0) {
-                    try {
+        synchronized (list) {
+            System.out.println(Thread.currentThread().getName() + " 获得执行权");
+            while (true) {
+                try {
+                    if (list.size() <= 0) {
+                        System.out.println(Thread.currentThread().getName() + " 存量不够，将进入等待");
                         list.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        System.out.println(Thread.currentThread().getName() + " 等待结束，重新开始运行");
+                    } else {
+                        System.out.println(Thread.currentThread().getName() + " 存量足够，准备进入消费");
+                        list.remove(0);
+                        System.out.println(Thread.currentThread().getName() + " 消费了一个对象 当前存量为：" + list.size());
+                        list.notifyAll();
+                        System.out.println(Thread.currentThread().getName() + " 唤醒在对象上等待的线程并准备进入等待");
+                        list.wait();
+                        System.out.println(Thread.currentThread().getName() + " 等待结束，重新开始运行");
                     }
-                } else {
-                    list.remove(0);
-                    System.out.println(Thread.currentThread().getName() + " 消费了一个对象 当前存量为：" +list.size());
-                    list.notifyAll();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         }

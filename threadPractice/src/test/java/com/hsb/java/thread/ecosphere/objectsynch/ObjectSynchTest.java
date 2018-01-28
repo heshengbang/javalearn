@@ -6,13 +6,9 @@ public class ObjectSynchTest {
     public static void main(String[] args) {
         ArrayList<Object> arrayList = new ArrayList<>(Constants.SIZE);
         System.out.println("初始存量为："+arrayList.size());
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             new Thread(new Producer(arrayList), "生产者线程&"+i).start();
-        }
-
-        for (int i = 0; i < 10; i++) {
             new Thread(new Consumer(arrayList), "消费者线程&"+i).start();
         }
-
     }
 }
