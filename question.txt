@@ -68,9 +68,11 @@ start()是启动一个线程，run()是运行一个函数。单独运行run()方
 14、不同的数据库如何作兼容？
 15、简述spring bean的生命周期？
 16、分布式服务中，session如何实现同步，讲讲基本的实现原理？
+http://blog.csdn.net/u010028869/article/details/50773174?ref=myread
 17、讲讲你对线程池的理解？（线程池是什么？怎么用？原理？优点和缺点？）
 18、在你现在开发的项目中如何做的数据库连接池管理？
 19、你现在开发的项目中如何实现单点登录的？
+https://www.jianshu.com/p/613e44d4a464
 20、Object的常见方法有哪些？
 21、当你将一个自定义对象放入HashMap中时，需要注意什么？保证哈希值的唯一性的原理是什么？
 
@@ -94,3 +96,4 @@ http://blog.csdn.net/m0_37327416/article/details/71743368
 30、跨域问题
 31、筛选法找素数
 见子模块base的algorithm包，Sieve
+32、lru算法
