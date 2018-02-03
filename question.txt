@@ -25,6 +25,9 @@ Postgresql默认事务隔离级别也是读提交（Read committed）但考虑�
 底层由C++编写，已经融入到JVM中
 
 4、常见的设计模式及其应用场景（单例模式、工厂模式、门面模式），Java代码编写实现？
+
+见子模块base中的pattern包
+
 5、ArrayList/LinkedList的区别，HashMap和Hashtable的区别？
 
 ①ArrayList底层使用动态数组，增删慢查询快，因为数组需要重新分配，此外由于ArrayList会预留一部分可扩展空间，因此其空间浪费较多
@@ -77,11 +80,11 @@ http://blog.jobbole.com/113555/
 26、工作流引擎activiti
 http://blog.csdn.net/m0_37327416/article/details/71743368
 27、归并排序
-见子模块，MergeSort
+见子模块base的algorithm包，MergeSort
 28、冒泡排序
-见子模块，BubbleSort
+见子模块base的algorithm包，BubbleSort
 29、快速排序
-见子模块，QuickSort
+见子模块base的algorithm包，QuickSort
 30、跨域问题
 31、筛选法找素数
-见子模块，Sieve
+见子模块base的algorithm包，Sieve
