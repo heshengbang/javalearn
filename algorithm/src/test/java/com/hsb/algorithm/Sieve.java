@@ -9,7 +9,7 @@ import java.util.BitSet;
  * https://twitter.com/heshengbang
  * https://github.com/tongheshang
  * email: trulyheshengbang@gmail.com
- *
+ * 查找一定范围内的所有素数，不用除法即可达到
  * source from Java核心技术卷一 P617 13-8   Eratosthenes 筛子算法
  */
 public class Sieve {
@@ -45,28 +45,3 @@ public class Sieve {
         System.out.println((end - start) + " milliseconds ");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

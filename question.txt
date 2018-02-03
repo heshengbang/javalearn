@@ -77,7 +77,12 @@ http://blog.jobbole.com/113555/
 26、工作流引擎activiti
 http://blog.csdn.net/m0_37327416/article/details/71743368
 27、归并排序
+见子模块，MergeSort
 28、冒泡排序
+见子模块，BubbleSort
 29、快速排序
+见子模块，QuickSort
 30、跨域问题
+31、筛选法找素数
+见子模块，Sieve
 
