@@ -55,7 +55,13 @@ start()是启动一个线程，run()是运行一个函数。单独运行run()方
 消费者模式可以用三种方式实现：BlockingQueue/lock/Objectsynch，其中最简单也是最高效的是BlockingQueue
 
 9、折半查找
+
+见子模块base BinarySearch 两种写法，递归和循环
+
 10、Hibernate中，load与get获取一条数据的区别在哪里？各自的优点和应用场景是什么？
+
+
+
 11、Mysql有哪些优化方式？
 12、spring中常用的配置事务的方式有哪些？哪个更好一点？为什么？
 13、hibernate和ibatis各自的优劣是什么，区别在哪里？
