@@ -59,7 +59,10 @@ start()是启动一个线程，run()是运行一个函数。单独运行run()方
 见子模块base BinarySearch 两种写法，递归和循环
 
 10、Hibernate中，load与get获取一条数据的区别在哪里？各自的优点和应用场景是什么？
-
+get()和load()都会使用缓存，都是首先从一级缓存Session中查找，当找不到的时候再去二级缓存中查找，
+当查询不到的时候get()返回的是null，
+而load()则根据配置是否lazy进行不同处理，如果为lazy则直接返回代理对象，在调用对象的非ID属性时就会去获取对象真正的值并加以填充，如果发现对象不存在则报ObjectNotFoundException
+如果不为lazy则去数据库中取具体值，并将其放到二级缓存，如果下一次再在二级缓存中拿到就放到一级缓存，当load()的配置为lazy时与get几乎没区别
 
 
 11、Mysql有哪些优化方式？
@@ -97,3 +100,23 @@ http://blog.csdn.net/m0_37327416/article/details/71743368
 31、筛选法找素数
 见子模块base的algorithm包，Sieve
 32、lru算法
+
+
+JSP中定义全局变量与局部变量
+JSP之间如何实现数据传输
+ArrayList在For循环中进行增删是否会出问题
+mysql常用版本及其对应的驱动版本
+如何解决前后端密码明文传输问题
+mybatis是如何防止SQL注入的
+如何防止XSS攻击
+不用框架，如何用Java代码完成连接数据库并CRUD
+做过的项目中是如何处理登录安全与资源权限控制
+JAVA常见的包有哪些，线程相关的包
+Hashtable
+WebService底层是什么协议在支撑
+Web系统中每次request都是一个线程吗
+SpringMVC是如何将JSP及Controller处理为URI的
+JDK8的新特性
+JAVA内存模型
+联表查询
+如何优化mysql
