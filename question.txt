@@ -104,7 +104,14 @@ http://blog.csdn.net/m0_37327416/article/details/71743368
 
 JSP中定义全局变量与局部变量
 JSP之间如何实现数据传输
+
 ArrayList在For循环中进行增删是否会出问题
+目前for循环有两种形式，一种是for int i=0，另一种是forEach
+两种循环对于获取ArrayList的数据都不会有问题，但是在对ArrayList内容进行增删有区别
+第一种for int i = 0,如果是使用for(int i=0;i<list.size();i++)则可能导致无限循环添加，因为list.size()是在不断变动的，如果是删除，则不会删除所有数据
+第二种forEach，则添加或删除都会导致ConcurrentModifiedException，因为ArrayList实现了List而List来源于Collection接口，Collection接口是Iterator的子接口，
+因此ArrayList可以使用forEach进行循环，forEach底层是使用的迭代器来对List迭代的，如果增加或者删除元素会导致迭代器的索引产生混乱，从而报错ConcurrentModifiedException
+
 mysql常用版本及其对应的驱动版本
 如何解决前后端密码明文传输问题
 mybatis是如何防止SQL注入的

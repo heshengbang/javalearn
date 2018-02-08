@@ -19,9 +19,9 @@ public class ArrayListTest {
 //            list.add("FUCK again");
 //        }
 
-//        for (int i = 0; i < list.size(); i++) {
-//            list.add("FUCK");
-//        }
+        for (int i = 0; i < list.size(); i++) {
+            list.remove(i);
+        }
 
         for (String string : list) {
             System.out.println(string);
