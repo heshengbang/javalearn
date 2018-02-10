@@ -3,12 +3,10 @@
 1、数据库的四种事务隔离级别，Oracle、MySQL、postgresql三大关系型数据库的默认事务隔离级别是什么？
 
 读未提交（Read uncommitted）、读提交（Read committed）、重复读（Repeatable read）、序列化（Serializable）
-
 ①读未提交不能避免任何问题，是最低级的事务隔离级别
 ②读提交只能避免脏读
 ③重复读可以避免脏读、不可重复读
 ④序列化可以避免脏读、不可重复读、幻读
-
 SQL Server、Oracle默认隔离级别是读提交（Read committed），Mysql的默认隔离级别就是重复读（Repeatable read），
 Postgresql默认事务隔离级别也是读提交（Read committed）但考虑到在Postgresql中读未提交和读提交被合并为读提交，因此单独说明。
 
@@ -64,7 +62,6 @@ get()和load()都会使用缓存，都是首先从一级缓存Session中查找�
 而load()则根据配置是否lazy进行不同处理，如果为lazy则直接返回代理对象，在调用对象的非ID属性时就会去获取对象真正的值并加以填充，如果发现对象不存在则报ObjectNotFoundException
 如果不为lazy则去数据库中取具体值，并将其放到二级缓存，如果下一次再在二级缓存中拿到就放到一级缓存，当load()的配置为lazy时与get几乎没区别
 
-
 11、Mysql有哪些优化方式？
 12、spring中常用的配置事务的方式有哪些？哪个更好一点？为什么？
 13、hibernate和ibatis各自的优劣是什么，区别在哪里？
@@ -73,6 +70,9 @@ get()和load()都会使用缓存，都是首先从一级缓存Session中查找�
 16、分布式服务中，session如何实现同步，讲讲基本的实现原理？
 http://blog.csdn.net/u010028869/article/details/50773174?ref=myread
 17、讲讲你对线程池的理解？（线程池是什么？怎么用？原理？优点和缺点？）
+线程池大致上分三种，单线程线程池，固定大小线程池，可变大小线程池
+详见Java核心技术 卷一 p680
+
 18、在你现在开发的项目中如何做的数据库连接池管理？
 19、你现在开发的项目中如何实现单点登录的？
 https://www.jianshu.com/p/613e44d4a464
