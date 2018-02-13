@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/annotationPractice/annotationPractice.iml" filepath="$PROJECT_DIR$/annotationPractice/annotationPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/annotationPractice/annotationPractice.iml" filepath="$PROJECT_DIR$/annotationPractice/annotationPractice.iml" group="javalearn and modules" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
-      <module fileurl="file://$PROJECT_DIR$/httpInvoker/client/client.iml" filepath="$PROJECT_DIR$/httpInvoker/client/client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dynamicProxy/dynamicProxy.iml" filepath="$PROJECT_DIR$/dynamicProxy/dynamicProxy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/httpInvoker/httpInvoker.iml" filepath="$PROJECT_DIR$/httpInvoker/httpInvoker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/javalearn.iml" filepath="$PROJECT_DIR$/javalearn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jdk/jdk.iml" filepath="$PROJECT_DIR$/jdk/jdk.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jni/jni.iml" filepath="$PROJECT_DIR$/jni/jni.iml" />
-      <module fileurl="file://$PROJECT_DIR$/oom/oom.iml" filepath="$PROJECT_DIR$/oom/oom.iml" />
-      <module fileurl="file://$PROJECT_DIR$/httpInvoker/server/server.iml" filepath="$PROJECT_DIR$/httpInvoker/server/server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/threadPractice/threadPractice.iml" filepath="$PROJECT_DIR$/threadPractice/threadPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/httpInvoker/client/client.iml" filepath="$PROJECT_DIR$/httpInvoker/client/client.iml" group="javalearn and modules/httpInvoker and modules" />
+      <module fileurl="file://$PROJECT_DIR$/dynamicProxy/dynamicProxy.iml" filepath="$PROJECT_DIR$/dynamicProxy/dynamicProxy.iml" group="javalearn and modules" />
+      <module fileurl="file://$PROJECT_DIR$/httpInvoker/httpInvoker.iml" filepath="$PROJECT_DIR$/httpInvoker/httpInvoker.iml" group="javalearn and modules/httpInvoker and modules" />
+      <module fileurl="file://$PROJECT_DIR$/javalearn.iml" filepath="$PROJECT_DIR$/javalearn.iml" group="javalearn and modules" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" group="javalearn and modules" />
+      <module fileurl="file://$PROJECT_DIR$/jdk/jdk.iml" filepath="$PROJECT_DIR$/jdk/jdk.iml" group="javalearn and modules" />
+      <module fileurl="file://$PROJECT_DIR$/jni/jni.iml" filepath="$PROJECT_DIR$/jni/jni.iml" group="javalearn and modules" />
+      <module fileurl="file://$PROJECT_DIR$/oom/oom.iml" filepath="$PROJECT_DIR$/oom/oom.iml" group="javalearn and modules" />
+      <module fileurl="file://$PROJECT_DIR$/httpInvoker/server/server.iml" filepath="$PROJECT_DIR$/httpInvoker/server/server.iml" group="javalearn and modules/httpInvoker and modules" />
+      <module fileurl="file://$PROJECT_DIR$/threadPractice/threadPractice.iml" filepath="$PROJECT_DIR$/threadPractice/threadPractice.iml" group="javalearn and modules" />
     </modules>
   </component>
 </project>

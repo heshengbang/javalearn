@@ -3,12 +3,10 @@ package com.hsb.java.jdbc;
          * Copyright ©2011-2017 hsb
          */
 
+import org.junit.Test;
+
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 
 public class DBTest {

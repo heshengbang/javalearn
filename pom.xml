@@ -17,8 +17,6 @@
         <module>jni</module>
         <module>jdk</module>
         <module>jdbc</module>
-        <module>jdbc</module>
-        <module>jdbc</module>
     </modules>
 
     <dependencies>
