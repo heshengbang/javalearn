@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="annotationPractice" />
+        <module name="base" />
+        <module name="client" />
+        <module name="dynamicProxy" />
+        <module name="jdbc" />
+        <module name="jdk" />
+        <module name="jni" />
+        <module name="oom" />
+        <module name="server" />
+        <module name="threadPractice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="annotationPractice" target="1.8" />
+      <module name="base" target="1.8" />
+      <module name="client" target="1.8" />
+      <module name="dynamicProxy" target="1.8" />
+      <module name="httpInvoker" target="1.8" />
+      <module name="javalearn" target="1.8" />
+      <module name="jdbc" target="1.8" />
+      <module name="jdk" target="1.8" />
+      <module name="jni" target="1.8" />
+      <module name="oom" target="1.8" />
+      <module name="server" target="1.8" />
+      <module name="threadPractice" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

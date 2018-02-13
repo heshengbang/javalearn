@@ -1,6 +1,6 @@
-﻿常见问题总结
+﻿## 常见问题总结
 
-1、数据库的四种事务隔离级别，Oracle、MySQL、postgresql三大关系型数据库的默认事务隔离级别是什么？
+### 数据库的四种事务隔离级别，Oracle、MySQL、postgresql三大关系型数据库的默认事务隔离级别是什么？
 
 读未提交（Read uncommitted）、读提交（Read committed）、重复读（Repeatable read）、序列化（Serializable）
 ①读未提交不能避免任何问题，是最低级的事务隔离级别
@@ -11,9 +11,9 @@ SQL Server、Oracle默认隔离级别是读提交（Read committed），Mysql的
 Postgresql默认事务隔离级别也是读提交（Read committed）但考虑到在Postgresql中读未提交和读提交被合并为读提交，因此单独说明。
 
 
-2、基本的SQL语句编写能力，包括(DDL/查找统一数据库中相同数据条目，不同表中相同的数据条目？
+### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
 
-3、J2EE的class loader加载顺序
+### J2EE的class loader加载顺序
 
 ①Bootstrap ClassLoader启动类加载器，负责加载JDK核心的库中的类
 ②Extension ClassLoader扩展类加载器，负责加载扩展库中的类jre/lib/ext
@@ -22,11 +22,11 @@ Postgresql默认事务隔离级别也是读提交（Read committed）但考虑�
 值得注意的是，扩展类加载器和系统类加载器、自定义类加载器都是继承自ClassLoader类的，但是Bootstrap ClassLoader不用继承，因为它是单独的一个类
 底层由C++编写，已经融入到JVM中
 
-4、常见的设计模式及其应用场景（单例模式、工厂模式、门面模式），Java代码编写实现？
+### 常见的设计模式及其应用场景（单例模式、工厂模式、门面模式），Java代码编写实现？
 
 见子模块base中的pattern包
 
-5、ArrayList/LinkedList的区别，HashMap和Hashtable的区别？
+### ArrayList/LinkedList的区别，HashMap和Hashtable的区别？
 
 ①ArrayList底层使用动态数组，增删慢查询快，因为数组需要重新分配，此外由于ArrayList会预留一部分可扩展空间，因此其空间浪费较多
 ②LinkedList底层使用链表，增删快查询慢，LinkedList的插入和删除只需要移动指向标识，所以空间复杂度是固定的
@@ -36,7 +36,7 @@ Postgresql默认事务隔离级别也是读提交（Read committed）但考虑�
 ②在不考虑多线程的情况下，使用HashMap效率更高一点，考虑多线程的情况下也应当使用ConcurrentHashMap，它与HashMap有共同的父类AbstractMap
 ③Hashtable是一个过时的类，现在通常情况下不会再使用了
 
-6、sleep和wait的区别？深层次的原因？
+### sleep和wait的区别？深层次的原因？
 
 ①sleep是Thread的方法，wait是Object的方法
 ②sleep被调用时，不会释放对象锁，wait调用时会释放对象锁
@@ -44,86 +44,87 @@ Postgresql默认事务隔离级别也是读提交（Read committed）但考虑�
 
 线程的五种状态：新建状态 就绪态 运行态 阻塞态 死亡状态
 
-7、start()-run()与直接执行run()的区别在哪里？哪个更好？应用场景？
+### start()-run()与直接执行run()的区别在哪里？哪个更好？应用场景？
 
 start()是启动一个线程，run()是运行一个函数。单独运行run()方法毫无意义，最多就是为了运行一个函数而运行一个函数，通常认为start()更好一点
 
-8、消费者-生产者，简述其基本内容，并编码实现？
+### 消费者-生产者，简述其基本内容，并编码实现？
 
 消费者模式可以用三种方式实现：BlockingQueue/lock/Objectsynch，其中最简单也是最高效的是BlockingQueue
 
-9、折半查找
+### 折半查找
 
 见子模块base BinarySearch 两种写法，递归和循环
 
-10、Hibernate中，load与get获取一条数据的区别在哪里？各自的优点和应用场景是什么？
+### Hibernate中，load与get获取一条数据的区别在哪里？各自的优点和应用场景是什么？
 get()和load()都会使用缓存，都是首先从一级缓存Session中查找，当找不到的时候再去二级缓存中查找，
 当查询不到的时候get()返回的是null，
 而load()则根据配置是否lazy进行不同处理，如果为lazy则直接返回代理对象，在调用对象的非ID属性时就会去获取对象真正的值并加以填充，如果发现对象不存在则报ObjectNotFoundException
 如果不为lazy则去数据库中取具体值，并将其放到二级缓存，如果下一次再在二级缓存中拿到就放到一级缓存，当load()的配置为lazy时与get几乎没区别
 
-11、Mysql有哪些优化方式？
-12、spring中常用的配置事务的方式有哪些？哪个更好一点？为什么？
-13、hibernate和ibatis各自的优劣是什么，区别在哪里？
-14、不同的数据库如何作兼容？
-15、简述spring bean的生命周期？
-16、分布式服务中，session如何实现同步，讲讲基本的实现原理？
+### Mysql有哪些优化方式？
+### spring中常用的配置事务的方式有哪些？哪个更好一点？为什么？
+### hibernate和ibatis各自的优劣是什么，区别在哪里？
+### 不同的数据库如何作兼容？
+### 简述spring bean的生命周期？
+### 分布式服务中，session如何实现同步，讲讲基本的实现原理？
 http://blog.csdn.net/u010028869/article/details/50773174?ref=myread
-17、讲讲你对线程池的理解？（线程池是什么？怎么用？原理？优点和缺点？）
+### 讲讲你对线程池的理解？（线程池是什么？怎么用？原理？优点和缺点？）
 线程池大致上分三种，单线程线程池，固定大小线程池，可变大小线程池
 详见Java核心技术 卷一 p680
 
-18、在你现在开发的项目中如何做的数据库连接池管理？
-19、你现在开发的项目中如何实现单点登录的？
+### 在你现在开发的项目中如何做的数据库连接池管理？
+### 你现在开发的项目中如何实现单点登录的？
 https://www.jianshu.com/p/613e44d4a464
-20、Object的常见方法有哪些？
-21、当你将一个自定义对象放入HashMap中时，需要注意什么？保证哈希值的唯一性的原理是什么？
+### Object的常见方法有哪些？
+clone equals finalize getClass hashCode notify notifyAll wait toString
+### 当你将一个自定义对象放入HashMap中时，需要注意什么？保证哈希值的唯一性的原理是什么？
 
 
 
-
-22、JNI的原理及其使用
+### JNI的原理及其使用
 https://baike.baidu.com/item/JNI/9412164?fr=aladdin
-23、slf4j的使用
-24、TreeSet的源码及红黑树
-25、Nginx 教程 （1）：基本概念
+### slf4j的使用
+### TreeSet的源码及红黑树
+### Nginx 教程 （1）：基本概念
 http://blog.jobbole.com/113555/
-26、工作流引擎activiti
+### 工作流引擎activiti
 http://blog.csdn.net/m0_37327416/article/details/71743368
-27、归并排序
+### 归并排序
 见子模块base的algorithm包，MergeSort
-28、冒泡排序
+### 冒泡排序
 见子模块base的algorithm包，BubbleSort
-29、快速排序
+### 快速排序
 见子模块base的algorithm包，QuickSort
-30、跨域问题
-31、筛选法找素数
+### 跨域问题
+### 筛选法找素数
 见子模块base的algorithm包，Sieve
-32、lru算法
+### lru算法
 
 
-JSP中定义全局变量与局部变量
-JSP之间如何实现数据传输
+### JSP中定义全局变量与局部变量
+### JSP之间如何实现数据传输
 
-ArrayList在For循环中进行增删是否会出问题
+### ArrayList在For循环中进行增删是否会出问题
 目前for循环有两种形式，一种是for int i=0，另一种是forEach
 两种循环对于获取ArrayList的数据都不会有问题，但是在对ArrayList内容进行增删有区别
 第一种for int i = 0,如果是使用for(int i=0;i<list.size();i++)则可能导致无限循环添加，因为list.size()是在不断变动的，如果是删除，则不会删除所有数据
 第二种forEach，则添加或删除都会导致ConcurrentModifiedException，因为ArrayList实现了List而List来源于Collection接口，Collection接口是Iterator的子接口，
 因此ArrayList可以使用forEach进行循环，forEach底层是使用的迭代器来对List迭代的，如果增加或者删除元素会导致迭代器的索引产生混乱，从而报错ConcurrentModifiedException
 
-mysql常用版本及其对应的驱动版本
-如何解决前后端密码明文传输问题
-mybatis是如何防止SQL注入的
-如何防止XSS攻击
-不用框架，如何用Java代码完成连接数据库并CRUD
-做过的项目中是如何处理登录安全与资源权限控制
-JAVA常见的包有哪些，线程相关的包
-Hashtable
-WebService底层是什么协议在支撑
-Web系统中每次request都是一个线程吗
-SpringMVC是如何将JSP及Controller处理为URI的
-JDK8的新特性
-JAVA内存模型
-联表查询
-如何优化mysql
+### mysql常用版本及其对应的驱动版本
+### 如何解决前后端密码明文传输问题
+### mybatis是如何防止SQL注入的
+### 如何防止XSS攻击
+### 不用框架，如何用Java代码完成连接数据库并CRUD
+### 做过的项目中是如何处理登录安全与资源权限控制
+### JAVA常见的包有哪些，线程相关的包
+### Hashtable
+### WebService底层是什么协议在支撑
+### Web系统中每次request都是一个线程吗
+### SpringMVC是如何将JSP及Controller处理为URI的
+### JDK8的新特性
+http://www.heshengbang.men/2018/01/JAVA-8新特性/
+### JAVA内存模型
+### 联表查询
+### 如何优化mysql
