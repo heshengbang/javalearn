@@ -117,6 +117,17 @@ http://blog.csdn.net/m0_37327416/article/details/71743368
 ### mybatis是如何防止SQL注入的
 ### 如何防止XSS攻击
 ### 不用框架，如何用Java代码完成连接数据库并CRUD
+
+* 确保数据库已经启动
+* 使用FileInputStream获取配置文件
+* 使用Property类导入配置，分别获得url和用户名密码和驱动
+* 通过DriverManager获得一个Connection
+* 使用Connection获得一个Statement
+* 通过Statement去执行sql语句
+* 通过ResultSet获得sql执行的结果
+* 关闭查询结果流(ResultSet)
+* 关闭连接
+
 ### 做过的项目中是如何处理登录安全与资源权限控制
 ### JAVA常见的包有哪些，线程相关的包
 ### Hashtable
