@@ -137,5 +137,12 @@ http://blog.csdn.net/m0_37327416/article/details/71743368
 ### JDK8的新特性
 http://www.heshengbang.men/2018/01/JAVA-8新特性/
 ### JAVA内存模型
-### 联表查询
+ http://www.importnew.com/19612.html
+ 主要包括线程栈，堆内存两部分。
+### 连表查询
+ * 内连接查询
+ * 外连接查询：外连接查询包括左查询，右查询，全查询
+ * 交叉连接查询
 ### 如何优化mysql
+* 硬件上，CPU，内存，硬盘驱动
+* 软件上，mysql的启动项优化，mysql的缓存调优，优化表结构，增加索引
