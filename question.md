@@ -114,6 +114,9 @@ http://blog.csdn.net/m0_37327416/article/details/71743368
 
 ### mysql常用版本及其对应的驱动版本
 ### 如何解决前后端密码明文传输问题
+* https = http+ssl
+* js加密
+
 ### mybatis是如何防止SQL注入的
 ### 如何防止XSS攻击
 ### 不用框架，如何用Java代码完成连接数据库并CRUD
@@ -129,21 +132,35 @@ http://blog.csdn.net/m0_37327416/article/details/71743368
 * 关闭连接
 
 ### 做过的项目中是如何处理登录安全与资源权限控制
+
 ### JAVA常见的包有哪些，线程相关的包
+* java.lang java语言包，包含提供利用 Java 编程语言进行程序设计的基础类
+* java.util java工具包，包含 collection 框架、遗留的 collection 类、事件模型、日期和时间设施、国际化和各种实用工具类（字符串标记生成器、随机数生成器和位数组）。
+* java.net java网络功能包，为实现网络应用程序提供类。
+* java.sql java数据库连接包，提供使用 JavaTM 编程语言访问并处理存储在数据源（通常是一个关系数据库）中的数据的 API。
+* java.io java输入输出包，通过数据流、序列化和文件系统提供系统输入和输出。
+* java.security安全包，为安全框架提供类和接口。
+
 ### Hashtable
 ### WebService底层是什么协议在支撑
 ### Web系统中每次request都是一个线程吗
 ### SpringMVC是如何将JSP及Controller处理为URI的
+
 ### JDK8的新特性
 http://www.heshengbang.men/2018/01/JAVA-8新特性/
+
 ### JAVA内存模型
  http://www.importnew.com/19612.html
+ http://blog.csdn.net/suifeng3051/article/details/52611310
  主要包括线程栈，堆内存两部分。
+ 线程栈存放方法局部变量，成员变量的拷贝，对象在方法上的应用
+ 堆内存存放成员变量，方法
  
 ### 连表查询
 * 内连接查询
 * 外连接查询：外连接查询包括左查询，右查询，全查询
 * 交叉连接查询
+
 ### 如何优化mysql
 * 硬件上，CPU，内存，硬盘驱动，操作系统
 * 软件上，mysql的启动项优化，mysql的缓存调优，优化表结构，增加索引
