@@ -144,7 +144,7 @@ get()和load()都会使用缓存，都是首先从一级缓存Session中查找�
 * java.security安全包，为安全框架提供类和接口。
 
 ### JDK8的新特性
-http://www.heshengbang.men/2018/01/JAVA-8新特性/
+[Java8的新特性](http://www.heshengbang.men/2018/01/JAVA-8新特性/)
 
 ### JAVA内存模型
 参考：[Java内存模型](http://www.importnew.com/19612.html)
