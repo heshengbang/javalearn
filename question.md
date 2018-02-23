@@ -4,21 +4,6 @@
 ### lru算法
 ### JSP中定义全局变量与局部变量
 ### JSP之间如何实现数据传输
-### 跨域问题
-所谓跨域问题就是指不同的域之间通信的问题，地址A访问地址B，如果A和B之间有不同就属于跨域问题。造成域不同的情况分三种，协议、域名、端口。
-* 协议就是指http/https/ftp/ssh之类的。https://www.example.com和http://www.example.com就会有跨域问题。
-* 域名的不同也包括二级域名不同造成的跨域。http://a.example.com和http://b.example.com也会有跨域问题。
-* 端口不同造成的跨域。http://www.example.com:8000和http://www.example.com
-
-目前业内对于跨域问题的解决方案是CORS，即跨域资源共享(Cross-Origin Resource Sharing)，它定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。
-CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求/响应是应该成功还是失败。
-解决跨域问题的常见方法：
-* 通过jsonp跨域
-
-
-* 跨域问题通常和CSRF这个问题牵扯在一起
-[跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html),
-[HTTP访问控制（CORS）](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
 ### slf4j的使用
 ### TreeSet的源码及红黑树
 ### mybatis是如何防止SQL注入的
@@ -35,6 +20,30 @@ CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务
 ### 不同的数据库如何作兼容？
 ### 简述spring bean的生命周期？
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
+
+### 跨域问题
+[跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html),
+[HTTP访问控制（CORS）](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS),
+[详解js跨域问题](https://segmentfault.com/a/1190000000718840),
+所谓跨域问题就是指不同的域之间通信的问题，地址A访问地址B，如果A和B之间有不同就属于跨域问题。造成域不同的情况分三种，协议、域名、端口。
+* 协议就是指http/https/ftp/ssh之类的。https://www.example.com和http://www.example.com就会有跨域问题。
+* 域名的不同也包括二级域名不同造成的跨域。http://a.example.com和http://b.example.com也会有跨域问题。
+* 端口不同造成的跨域。http://www.example.com:8000和http://www.example.com
+
+目前业内对于跨域问题的解决方案是CORS，即跨域资源共享(Cross-Origin Resource Sharing)，它定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。
+CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求/响应是应该成功还是失败。
+解决跨域问题的常见方法：jsonp/cors/document.domain/document.name
+
+跨域问题通常和CSRF这个问题牵扯在一起,需要进一步了解。CSRF跨站点请求伪造(Cross—Site Request Forgery)，攻击者盗用被攻击者的信息发送非法请求以获取信息。
+CSRF攻击攻击原理及过程如下：
+1. 用户C打开浏览器，访问受信任网站A，输入用户名和密码请求登录网站A
+2. 在用户信息通过验证后，网站A产生Cookie信息并返回给浏览器，此时用户登录网站A成功，可以正常发送请求到网站A；
+3. 用户未退出网站A之前，在同一浏览器中，打开一个TAB页访问网站B；
+4. 网站B接收到用户请求后，返回一些攻击性代码，并发出一个请求要求访问第三方站点A；
+5. 浏览器在接收到这些攻击性代码后，根据网站B的请求，在用户不知情的情况下携带Cookie信息，向网站A发出请求。网站A并不知道该请求其实是由B发起的，所以会根据用户C的Cookie信息以C的权限处理该请求，导致来自网站B的恶意代码被执行。
+
+目前防御 CSRF 攻击主要有三种策略：验证 HTTP Referer 字段；在请求地址中添加 token 并验证；在 HTTP 头中自定义属性并验证。
+
 ### 数据库的四种事务隔离级别，Oracle、MySQL、postgresql三大关系型数据库的默认事务隔离级别是什么？
 读未提交（Read uncommitted）、读提交（Read committed）、重复读（Repeatable read）、序列化（Serializable）
 * 读未提交不能避免任何问题，是最低级的事务隔离级别
