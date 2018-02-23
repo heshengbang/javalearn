@@ -5,6 +5,20 @@
 ### JSP中定义全局变量与局部变量
 ### JSP之间如何实现数据传输
 ### 跨域问题
+所谓跨域问题就是指不同的域之间通信的问题，地址A访问地址B，如果A和B之间有不同就属于跨域问题。造成域不同的情况分三种，协议、域名、端口。
+* 协议就是指http/https/ftp/ssh之类的。https://www.example.com和http://www.example.com就会有跨域问题。
+* 域名的不同也包括二级域名不同造成的跨域。http://a.example.com和http://b.example.com也会有跨域问题。
+* 端口不同造成的跨域。http://www.example.com:8000和http://www.example.com
+
+目前业内对于跨域问题的解决方案是CORS，即跨域资源共享(Cross-Origin Resource Sharing)，它定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。
+CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求/响应是应该成功还是失败。
+解决跨域问题的常见方法：
+* 通过jsonp跨域
+
+
+* 跨域问题通常和CSRF这个问题牵扯在一起
+[跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html),
+[HTTP访问控制（CORS）](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
 ### slf4j的使用
 ### TreeSet的源码及红黑树
 ### mybatis是如何防止SQL注入的
