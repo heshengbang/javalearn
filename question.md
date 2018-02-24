@@ -1,6 +1,6 @@
 ﻿## 常见问题总结
 
-### 当你将一个自定义对象放入HashMap中时，需要注意什么？保证哈希值的唯一性的原理是什么？
+### 谈谈对HashMap的看法
 ### lru算法
 ### JSP中定义全局变量与局部变量
 ### JSP之间如何实现数据传输
@@ -18,8 +18,37 @@
 ### spring中常用的配置事务的方式有哪些？哪个更好一点？为什么？
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 ### 不同的数据库如何作兼容？
-### 简述spring bean的生命周期？
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
+
+### 简述spring bean的生命周期？
+1. Spring对Bean进行实例化，调用构造函数
+2. Spring将值和Bean的应用注入进Bean对应的属性中，调用各个属性的set方法
+3. 如果Bean实现了BeanNameAware接口，Spring将Bean的ID传递给setBeanName()接口方法
+4. 如果Bean实现了BeanFactoryAware接口，Spring将调用setBeanFactory()接口方法，将BeanFactory容器实例传入
+5. 如果Bean实现了ApplicationContextAware接口，Spring将调用setApplicationContext()接口方法，将应用上下文应用传入
+6. 如果Bean实现了BeanPostProcessor接口，Spring将调用他们的postProcessBeforeInitialization()接口方法
+7. 如果Bean实现了InitializingBean接口，Spring将调用它们的afterPropertiesSet()接口方法。如果Bean使用了init-method声明了该初始化方法，该方法也会被调用
+8. 如果Bean实现了BeanPostProcessor接口，Spring将调用它们的postProcessAfterInitialization()接口方法
+9. 到目前，Bean已经准备就绪，可以被应用程序使用，它们将一直存在应用上下文，直到应用上下文被销毁
+10. 如果Bean实现了DisposableBean接口，spring将调用它的destroy()接口方法。同样的，如果Bean使用了destroy-method声明了销毁方法，该方法也会被调用
+
+注意，Spring Bean默认是单例的且使用的是饿汉模式即启动容器的时候就给所有的Bean生成一个实例，如果要使用懒汉模式可以配置default-lazy-init="true"，进一步的如果根本不需要使用单例模式的话可以设置scope="prototype"
+见项目中的spring模块中的LifeCycleApp测试实例。在Spring 2.5之后，开发者有三种选择来控制Bean的生命周期行为：
+* InitializingBean和DisposableBean回调接口
+* 自定义的init()以及destroy方法
+* 使用@PostConstruct以及@PreDestroy注解
+开发者也可以在Bean上联合这些机制一起使用
+> 如果Bean配置了多个生命周期机制，而且每个机制配置了不同的方法名字，那么每个配置的方法会按照后面描述的顺序来执行。然而，如果配置了相同的名字，比如说初始化回调为init()，在不止一个生命周期机制配置为这个方法的情况下，这个方法只会执行一次。
+
+如果一个Bean配置了多个生命周期机制，并且含有不同的方法名，执行的顺序如下：
+* 包含@PostConstruct注解的方法
+* 在InitializingBean接口中的afterPropertiesSet()方法
+* 自定义的init()方法
+
+销毁方法的执行顺序和初始化的执行顺序相同：
+* 包含@PreDestroy注解的方法
+* 在DisposableBean接口中的destroy()方法
+* 自定义的destroy()方法
 
 ### 跨域问题
 [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html),
