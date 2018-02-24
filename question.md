@@ -20,6 +20,32 @@
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
 ### spring 事务管理
 [spring 事务管理](http://baixin.ink/2016/03/25/spring-transaction/)
+Spring事务管理器的核心接口是org.springframework.transaction.PlatformTransactionManager，将事务管理的职责委托给Hibernate或者JTA等持久化机制所提供的相关平台框架的事务来实现。
+常见的平台框架实现的Spring事务管理核心接口有以下几个：
+* JDBC事务，使用DataSourceTransactionManager处理事务，DataSourceTransactionManager实际上是通过java.sql.Connection来管理事务，Connection是通过DataSource获取到的。
+```xml
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+       <property name="dataSource" ref="dataSource" />
+</bean>
+```
+* Hibernate是通过HibernateTransactionManager处理事务，HibernateTransactionManager的实现细节是它将事务管理的职责委托给org.hibernate.Transaction对象，而后者是从Hibernate Session中获取到的。
+```xml
+<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory" />
+</bean>
+```
+* Java持久化API事务（JPA）使用JpaTransactionManager处理事务，JpaTransactionManager只需要装配一个JPA实体管理工厂（javax.persistence.EntityManagerFactory接口的任意实现）。JpaTransactionManager将与由工厂所产生的JPA EntityManager合作来构建事务。
+```xml
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory" />
+</bean>
+```
+* Java原生API事务，在没有使用到上面三种事务管理时，亦或者跨越了多个数据源（两个以上），则可以使用JtaTransactionManager。JtaTransactionManager将事务管理的责任委托给`javax.transaction.UserTransaction`和`javax.transaction.TransactionManager`对象。
+```xml
+<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+    <property name="transactionManagerName" value="java:/TransactionManager" />
+</bean>
+```
 
 ### 简述spring bean的生命周期？
 1. Spring对Bean进行实例化，调用构造函数
