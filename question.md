@@ -15,10 +15,11 @@
 ### Web系统中每次request都是一个线程吗
 ### SpringMVC是如何将JSP及Controller处理为URI的
 ### 在你现在开发的项目中如何做的数据库连接池管理？
-### spring中常用的配置事务的方式有哪些？哪个更好一点？为什么？
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 ### 不同的数据库如何作兼容？
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
+### spring 事务管理
+[spring 事务管理](http://baixin.ink/2016/03/25/spring-transaction/)
 
 ### 简述spring bean的生命周期？
 1. Spring对Bean进行实例化，调用构造函数
@@ -55,8 +56,8 @@
 [HTTP访问控制（CORS）](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS),
 [详解js跨域问题](https://segmentfault.com/a/1190000000718840),
 所谓跨域问题就是指不同的域之间通信的问题，地址A访问地址B，如果A和B之间有不同就属于跨域问题。造成域不同的情况分三种，协议、域名、端口。
-* 协议就是指http/https/ftp/ssh之类的。https://www.example.com和http://www.example.com就会有跨域问题。
-* 域名的不同也包括二级域名不同造成的跨域。http://a.example.com和http://b.example.com也会有跨域问题。
+* 协议就是指http/https/ftp/ssh之类的。https://www.example.com和http://www.example.com 就会有跨域问题。
+* 域名的不同也包括二级域名不同造成的跨域。http://a.example.com和http://b.example.com 也会有跨域问题。
 * 端口不同造成的跨域。http://www.example.com:8000和http://www.example.com
 
 目前业内对于跨域问题的解决方案是CORS，即跨域资源共享(Cross-Origin Resource Sharing)，它定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。
@@ -112,7 +113,7 @@ Postgresql默认事务隔离级别也是读提交（Read committed）但考虑�
 
 线程的五种状态：新建状态 就绪态 运行态 阻塞态 死亡状态
 
-### start()-run()与直接执行run()的区别在哪里？哪个更好？应用场景？
+### start()-run()与直接执行run()有什么区别
 start()是启动一个线程，run()是运行一个函数。单独运行run()方法毫无意义，最多就是为了运行一个函数而运行一个函数，通常认为start()更好一点
 
 ### 消费者-生产者，简述其基本内容，并编码实现？
