@@ -47,6 +47,12 @@ Spring事务管理器的核心接口是org.springframework.transaction.PlatformT
 </bean>
 ```
 
+事务的五个维度：传播行为，隔离级别，事务超时，只读，回滚规则
+
+事务的配置分两种方式：编程式事务和声明式事务
+编程式事务有两种实现方式：TransactionTemplate，PlatformTransactionManager
+[声明式事务有五种实现方式](http://www.blogjava.net/robbie/archive/2009/04/05/264003.html)：每个Bean都有一个代理，所有Bean共享一个代理基类，使用拦截器，使用tx标签配置的拦截器，全注解 
+
 ### 简述spring bean的生命周期？
 1. Spring对Bean进行实例化，调用构造函数
 2. Spring将值和Bean的应用注入进Bean对应的属性中，调用各个属性的set方法
