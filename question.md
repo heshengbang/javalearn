@@ -2,8 +2,6 @@
 
 ### 谈谈对HashMap的看法
 ### lru算法
-### JSP中定义全局变量与局部变量
-### JSP之间如何实现数据传输
 ### slf4j的使用
 ### TreeSet的源码及红黑树
 ### mybatis是如何防止SQL注入的
@@ -18,6 +16,13 @@
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 ### 不同的数据库如何作兼容？
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
+### JSP之间如何实现数据传输
+JSP之间是无法直接相互传递数据的，只能通过间接的手段。分别可以用URL，Form表单，Cookie，Session。
+### JSP中定义全局变量与局部变量
+JSP在运行过程中实际会被解析为一个Servlet类，因此全局变量和局部变量有所不同
+- 定义全局变量用<%! %>，此方式定义的变量，解析过程中会生成一个对象的成员变量，存放在堆上
+- 定义局部变量用<% %>，此方式定义的变量，解析过程中会被解析为一个方法中定义的局部变量，存放在栈上
+
 ### spring 事务管理
 [spring 事务管理](http://baixin.ink/2016/03/25/spring-transaction/)
 Spring事务管理器的核心接口是org.springframework.transaction.PlatformTransactionManager，将事务管理的职责委托给Hibernate或者JTA等持久化机制所提供的相关平台框架的事务来实现。
@@ -50,8 +55,8 @@ Spring事务管理器的核心接口是org.springframework.transaction.PlatformT
 事务的五个维度：传播行为，隔离级别，事务超时，只读，回滚规则
 
 事务的配置分两种方式：编程式事务和声明式事务
-编程式事务有两种实现方式：TransactionTemplate，PlatformTransactionManager
-[声明式事务有五种实现方式](http://www.blogjava.net/robbie/archive/2009/04/05/264003.html)：每个Bean都有一个代理，所有Bean共享一个代理基类，使用拦截器，使用tx标签配置的拦截器，全注解 
+- 编程式事务有两种实现方式：TransactionTemplate，PlatformTransactionManager
+- [声明式事务有五种实现方式](http://www.blogjava.net/robbie/archive/2009/04/05/264003.html)：每个Bean都有一个代理，所有Bean共享一个代理基类，使用拦截器，使用tx标签配置的拦截器，全注解 
 
 ### 简述spring bean的生命周期？
 1. Spring对Bean进行实例化，调用构造函数
