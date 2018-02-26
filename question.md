@@ -1,13 +1,10 @@
 ﻿## 常见问题总结
 
-### 谈谈对HashMap的看法
-### lru算法
 ### slf4j的使用
 ### TreeSet的源码及红黑树
 ### mybatis是如何防止SQL注入的
 ### mysql常用版本及其对应的驱动版本
 ### 做过的项目中是如何处理登录安全与资源权限控制
-### Hashtable
 ### WebService底层是什么协议在支撑
 ### Web系统中每次request都是一个线程吗
 ### SpringMVC是如何将JSP及Controller处理为URI的
@@ -15,6 +12,22 @@
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 ### 不同的数据库如何作兼容？
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
+### HashMap中放入自定义对象时，需要注意什么？
+[Java8之重新认识HashMap](https://tech.meituan.com/java-hashmap.html)，自定义对象需要重写hashCode,equals方法
+
+### [lru算法](http://flychao88.iteye.com/blog/1977653)
+**LRU（Least recently used，最近最少使用）算法**根据数据的历史访问记录来进行淘汰数据，其核心思想是“如果数据最近被访问过，那么将来被访问的几率也更高”。常见于对缓存的处理。
+
+常见实现是链表：
+1. 将数据插入到链表中
+2. 链表中的数据被访问，将被访问的数据移动到表头
+3. 链表满，则将链表尾部的数据丢弃
+
+拓展：存在LRU-K算法，即最近K次访问才能将数据置于队列头。常见的LRU算法可视作LRU-1。
+
+### Hashtable
+Hashtable是遗留类，很多映射的常用功能与HashMap类似，不同的是它承自Dictionary类，并且是线程安全的，任一时间只有一个线程能写Hashtable，并发性不如ConcurrentHashMap，因为ConcurrentHashMap引入了分段锁。
+Hashtable不建议在新代码中使用，不需要线程安全的场合可以用HashMap替换，需要线程安全的场合可以用ConcurrentHashMap替换。
 
 ### 如何防止XSS攻击
 **跨站脚本攻击(Cross Site Scripting)**，缩写为XSS。恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。
