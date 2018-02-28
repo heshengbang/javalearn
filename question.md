@@ -1,6 +1,5 @@
 ﻿## 常见问题总结
 
-### slf4j的使用
 ### TreeSet的源码及红黑树
 ### mybatis是如何防止SQL注入的
 ### mysql常用版本及其对应的驱动版本
@@ -12,6 +11,84 @@
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 ### 不同的数据库如何作兼容？
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
+### slf4j的使用
+见子模块slf4j，通过简单的依赖即可实现日志框架之间的兼容。
+slf4j通常会提到Facade模式，即外观(门面)模式。
+> Facade（外观）模式为子系统中的各类（或结构与方法）提供一个简明一致的界面，隐藏子系统的复杂性，使子系统更加容易使用。
+
+例如：
+```java
+public class CPU 
+{
+    public static final Logger LOGGER = Logger.getLogger(CPU.class);
+    public void start()
+    {
+        LOGGER.info("cpu is start...");
+    }
+    public void shutDown()
+    {
+        LOGGER.info("CPU is shutDown...");
+    }
+}
+
+public class Disk
+{
+    public static final Logger LOGGER = Logger.getLogger(Disk.class);
+    public void start()
+    {
+        LOGGER.info("Disk is start...");
+    }
+    public void shutDown()
+    {
+        LOGGER.info("Disk is shutDown...");
+    }
+}
+
+public class Memory
+{
+    public static final Logger LOGGER = Logger.getLogger(Memory.class);
+    public void start()
+    {
+        LOGGER.info("Memory is start...");
+    }
+    public void shutDown()
+    {
+        LOGGER.info("Memory is shutDown...");
+    }
+}
+
+public class Computer
+{
+    public static final Logger LOGGER = Logger.getLogger(Computer.class);
+    
+    private CPU cpu;
+    private Memory memory;
+    private Disk disk;
+    public Computer()
+    {
+        cpu = new CPU();
+        memory = new Memory();
+        disk = new Disk();
+    }
+    public void start()
+    {
+        LOGGER.info("Computer start begin");
+        cpu.start();
+        disk.start();
+        memory.start();
+        LOGGER.info("Computer start end");
+    }
+    public void shutDown()
+    {
+        LOGGER.info("Computer shutDown begin");
+        cpu.shutDown();
+        disk.shutDown();
+        memory.shutDown();
+        LOGGER.info("Computer shutDown end...");
+    }
+}
+```
+
 ### HashMap中放入自定义对象时，需要注意什么？
 [Java8之重新认识HashMap](https://tech.meituan.com/java-hashmap.html)，自定义对象需要重写hashCode,equals方法
 

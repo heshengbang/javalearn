@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/jni/jni.iml" filepath="$PROJECT_DIR$/jni/jni.iml" group="javalearn and modules" />
       <module fileurl="file://$PROJECT_DIR$/oom/oom.iml" filepath="$PROJECT_DIR$/oom/oom.iml" group="javalearn and modules" />
       <module fileurl="file://$PROJECT_DIR$/httpInvoker/server/server.iml" filepath="$PROJECT_DIR$/httpInvoker/server/server.iml" group="javalearn and modules/httpInvoker and modules" />
+      <module fileurl="file://$PROJECT_DIR$/slf4j/slf4j.iml" filepath="$PROJECT_DIR$/slf4j/slf4j.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring/spring.iml" filepath="$PROJECT_DIR$/spring/spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/threadPractice/threadPractice.iml" filepath="$PROJECT_DIR$/threadPractice/threadPractice.iml" group="javalearn and modules" />
     </modules>
