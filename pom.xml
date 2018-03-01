@@ -19,6 +19,7 @@
         <module>jdbc</module>
         <module>spring</module>
         <module>slf4j</module>
+        <module>util</module>
     </modules>
 
     <dependencies>

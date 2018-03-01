@@ -18,6 +18,7 @@
         <module name="slf4j" />
         <module name="spring" />
         <module name="threadPractice" />
+        <module name="util" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -35,6 +36,7 @@
       <module name="slf4j" target="1.6" />
       <module name="spring" target="1.6" />
       <module name="threadPractice" target="1.7" />
+      <module name="util" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
