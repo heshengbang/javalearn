@@ -7,7 +7,12 @@
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 ### 做过的项目中是如何处理登录安全与资源权限控制
 ### WebService底层是什么协议在支撑
+
+
 ### Web系统中每次request都是一个线程吗
+不是，默认情况下，每个http请求访问的都是同一个servlet实例。所以servlet是线程不安全的。
+Web容器为每个Session分配一个线程，http请求只是Session的一次会话。
+
 ### mysql常用版本及其对应的驱动版本
 - Connector/J 5.1 支持Mysql 4.1、Mysql 5.0、Mysql 5.1、Mysql 6.0 alpha这些版本
 - Connector/J 5.0 支持MySQL 4.1、MySQL 5.0 servers、distributed transaction (XA)
