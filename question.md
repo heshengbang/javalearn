@@ -1,15 +1,29 @@
 ﻿## 常见问题总结
 
 ### TreeSet的源码及红黑树
+### SpringMVC是如何将JSP及Controller处理为URI的
+### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
 ### mybatis是如何防止SQL注入的
-### mysql常用版本及其对应的驱动版本
+### hibernate和ibatis各自的优劣是什么，区别在哪里？
 ### 做过的项目中是如何处理登录安全与资源权限控制
 ### WebService底层是什么协议在支撑
 ### Web系统中每次request都是一个线程吗
-### SpringMVC是如何将JSP及Controller处理为URI的
+### mysql常用版本及其对应的驱动版本
+- Connector/J 5.1 支持Mysql 4.1、Mysql 5.0、Mysql 5.1、Mysql 6.0 alpha这些版本
+- Connector/J 5.0 支持MySQL 4.1、MySQL 5.0 servers、distributed transaction (XA)
+- Connector/J 3.1 支持MySQL 4.1、MySQL 5.0 servers、MySQL 5.0 except distributed transaction (XA) support
+- Connector/J 3.0 支持MySQL 3.x or MySQL 4.1
+
 ### 数据库连接池管理？
-### hibernate和ibatis各自的优劣是什么，区别在哪里？
-### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
+[数据库连接池原理](http://blog.csdn.net/shuaihj/article/details/14223015)
+
+常见的第三方数据库连接池：dbcp，c3p0
+商业中间件连接池：weblogic，websphere
+
+c3p0与dbcp区别
+- dbcp没有自动回收空闲连接的功能
+- c3p0有自动回收空闲连接功能
+
 ### slf4j的使用
 见子模块slf4j，通过简单的依赖即可实现日志框架之间的兼容。
 slf4j通常会提到Facade模式，即外观(门面)模式。
