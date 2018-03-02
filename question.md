@@ -6,8 +6,17 @@
 ### mybatis是如何防止SQL注入的
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 ### 做过的项目中是如何处理登录安全与资源权限控制
-### WebService底层是什么协议在支撑
-
+### WebService
+* 基础的 Web Services 平台是 XML + HTTP
+    * HTTP 协议是最常用的因特网协议
+    * XML 提供了一种可用于不同的平台和编程语言之间的语言
+* Web services 平台的元素：
+    * SOAP (简易对象访问协议)
+    * UDDI (通用描述、发现及整合)
+    * WSDL (Web services 描述语言)
+* Web services 有两种类型的应用
+    * 可重复使用的应用程序组件
+    * 连接现有的软件
 
 ### Web系统中每次request都是一个线程吗
 不是，默认情况下，每个http请求访问的都是同一个servlet实例。所以servlet是线程不安全的。
