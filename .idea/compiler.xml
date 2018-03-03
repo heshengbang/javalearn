@@ -22,21 +22,21 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="annotationPractice" target="1.6" />
+      <module name="annotationPractice" target="1.5" />
       <module name="base" target="1.6" />
-      <module name="client" target="1.6" />
+      <module name="client" target="1.5" />
       <module name="dynamicProxy" target="1.6" />
-      <module name="httpInvoker" target="1.6" />
-      <module name="javalearn" target="1.6" />
+      <module name="httpInvoker" target="1.5" />
+      <module name="javalearn" target="1.5" />
       <module name="jdbc" target="1.7" />
       <module name="jdk" target="1.8" />
-      <module name="jni" target="1.6" />
+      <module name="jni" target="1.5" />
       <module name="oom" target="1.7" />
-      <module name="server" target="1.6" />
-      <module name="slf4j" target="1.6" />
-      <module name="spring" target="1.6" />
+      <module name="server" target="1.5" />
+      <module name="slf4j" target="1.5" />
+      <module name="spring" target="1.5" />
       <module name="threadPractice" target="1.7" />
-      <module name="util" target="1.6" />
+      <module name="util" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

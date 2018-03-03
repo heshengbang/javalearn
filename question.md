@@ -6,6 +6,9 @@
 ### mybatis是如何防止SQL注入的
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 ### 做过的项目中是如何处理登录安全与资源权限控制
+- spring security
+- shiro
+
 ### WebService
 * 基础的 Web Services 平台是 XML + HTTP
     * HTTP 协议是最常用的因特网协议
