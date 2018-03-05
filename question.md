@@ -4,6 +4,15 @@
 ### SpringMVC是如何将JSP及Controller处理为URI的
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
+- Hibernate优势
+    - Hibernate的DAO层开发比MyBatis简单，Mybatis需要维护SQL和结果映射。
+    - Hibernate对对象的维护和缓存要比MyBatis好，对增删改查的对象的维护要方便。
+    - Hibernate数据库移植性很好，MyBatis的数据库移植性不好，不同的数据库需要写不同SQL。
+    - Hibernate有更好的二级缓存机制，可以使用第三方缓存。MyBatis本身提供的缓存机制不佳。
+- Mybatis优势
+    - MyBatis可以进行更为细致的SQL优化，可以减少查询字段。
+    - MyBatis容易掌握，而Hibernate门槛较高。
+
 ### mybatis是如何防止SQL注入的
 对sql语句进行了预编译，在执行前通过#{}注入参数，避免了sql注入的问题。
 *  `#{}` 相当于JDBC中的PreparedStatement
