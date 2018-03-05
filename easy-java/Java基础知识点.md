@@ -678,34 +678,3 @@ Java在编译和运行程序时，都要对可能出现的问题进行检查，�
 可视化
 1. JConsole(Java Monitoring and Management Console):Java监视与管理控制台
 2. VisualVM(All-in-one Java Troubleshooting Tool):多合一故障处理工具
-
-----------
-
-### 全文下载
-+ [Github托管](https://github.com/Lemonjing/TinyMood/blob/master/技术笔记/Java-note-basic.md)
-
-### 我的其他项目
-
-+ [TinyMooc](https://github.com/Lemonjing/tinymooc)
-+ [TinyCoding](https://github.com/Lemonjing/tinycoding)
-+ [JavaSE工程](https://github.com/Lemonjing/myjavase)
-+ [Leetcode题解](https://github.com/Lemonjing/leetcode)
-
-### 最近更新
-
-+ [文章列表](https://github.com/Lemonjing/TinyMood/blob/master/UPDATE_LOG.md)
-
-### 联系我
-
-- WebSite:[http://www.tinymood.com][1]
-- Mail: 932191671@qq.com
-- Linux交流群: [257265338][2]
-- 邂逅厦大交流群:[103949230][3]
-
-作者 [微博@Campanulaceae][4]       
-
-[1]: http://www.tinymood.com   
-[2]: http://jq.qq.com/?_wv=1027&k=ZKsbKb
-[3]: http://jq.qq.com/?_wv=1027&k=Xxno3g
-[4]: http://weibo.com/u/1662536394
-[5]: https://github.com/Lemonjing/TinyMood/blob/master/技术文章/Java序列化.md
