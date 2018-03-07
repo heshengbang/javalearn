@@ -29,4 +29,9 @@ public class Test {
         }
         System.out.print(list.get(0));
     }
+
+    @org.junit.Test
+    public void overflow() {
+        System.out.println(1147483647 * 2 +2);
+    }
 }

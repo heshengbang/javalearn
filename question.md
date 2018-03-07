@@ -3,6 +3,12 @@
 ### TreeSet的源码及红黑树
 ### SpringMVC是如何将JSP及Controller处理为URI的
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
+### StringBuffer一直append会出现什么情况？
+出现java.lang.OutOfMemoryError: Java heap space 。StringBuffer.append的过程中空余空间不足会去扩容，扩容会去根据当前使用的大小的二倍加二来扩容。
+当准备扩容的容量，已经超过Integer的最大值时，就会将扩容的容量取为当前需要的最小容量（已经使用的空间+准备append的字符串的大小）。如果需要的最小容量
+也超过了Integer的最大值，就会抛出Java heap space.
+
+
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 - Hibernate优势
     - Hibernate的DAO层开发比MyBatis简单，Mybatis需要维护SQL和结果映射。
