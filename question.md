@@ -2,12 +2,15 @@
 
 ### TreeSet的源码及红黑树
 ### SpringMVC是如何将JSP及Controller处理为URI的
+今天实操了一把，感官上是服务器上维护了一个线程池，每一次请求去拿线程池里的空闲线程来处理，如果没有空闲线程，则请求被阻塞，直到有线程能处理请求位置。 springmvc+tomcat
+
 ### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
 ### StringBuffer一直append会出现什么情况？
 出现java.lang.OutOfMemoryError: Java heap space 。StringBuffer.append的过程中空余空间不足会去扩容，扩容会去根据当前使用的大小的二倍加二来扩容。
 当准备扩容的容量，已经超过Integer的最大值时，就会将扩容的容量取为当前需要的最小容量（已经使用的空间+准备append的字符串的大小）。如果需要的最小容量
-也超过了Integer的最大值，就会抛出Java heap space.
+也超过了Integer的最大值，就会抛出Java heap space. 具体可见StringBuffer源码。
 
+此处，把问题中的StringBuffer换成StringBuilder其实是一样的，都是使用了AbstracStringBuilder.expandCapacity(int minimumCapacity)来进行扩容。
 
 ### hibernate和ibatis各自的优劣是什么，区别在哪里？
 - Hibernate优势
