@@ -1,10 +1,10 @@
 ﻿## 常见问题总结
 
 ### TreeSet的源码及红黑树
+### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
 ### SpringMVC是如何将JSP及Controller处理为URI的
 今天实操了一把，感官上是服务器上维护了一个线程池，每一次请求去拿线程池里的空闲线程来处理，如果没有空闲线程，则请求被阻塞，直到有线程能处理请求位置。 springmvc+tomcat
 
-### 基本的SQL语句编写能力，查找不同表中相同的数据条目？
 ### StringBuffer一直append会出现什么情况？
 出现java.lang.OutOfMemoryError: Java heap space 。StringBuffer.append的过程中空余空间不足会去扩容，扩容会去根据当前使用的大小的二倍加二来扩容。
 当准备扩容的容量，已经超过Integer的最大值时，就会将扩容的容量取为当前需要的最小容量（已经使用的空间+准备append的字符串的大小）。如果需要的最小容量
@@ -23,7 +23,7 @@
     - MyBatis容易掌握，而Hibernate门槛较高。
 
 ### mybatis是如何防止SQL注入的
-对sql语句进行了预编译，在执行前通过#{}注入参数，避免了sql注入的问题。
+首先是动态sql,这个帮助减少拼接sql的操作。其次，对sql语句进行了预编译，在执行前通过#{}注入参数，避免了sql注入的问题。
 *  `#{}` 相当于JDBC中的PreparedStatement
 * `${}` 是输出变量的值，涉及到动态表名和列名时，只能使用“${xxx}”这样的参数格式。
 
