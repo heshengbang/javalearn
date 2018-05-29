@@ -44,6 +44,7 @@ public class QuickSort {
                 int temp = a[h];
                 a[h] = a[l];
                 a[l] = temp;
+                h--
             }
         }
         for (int one : a) {
