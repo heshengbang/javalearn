@@ -4,7 +4,6 @@ package com.hsb.java.util;
          */
 
 import org.junit.Test;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.File;
 import java.io.FileFilter;

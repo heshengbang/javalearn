@@ -12,7 +12,18 @@ import org.ehcache.sizeof.SizeOf;
 
 public class SizeOfTest {
     public static void main(String[] args) {
-        charTest();
+        longTest();
+    }
+
+    static class LongA{
+        long var;
+    }
+
+    public static void longATest() {
+        LongA longA = new LongA();
+        longA.var = 235L;
+        SizeOf sizeOf = SizeOf.newInstance();
+        System.out.println("sizeOf=" + sizeOf.sizeOf(longA) + "    deepSizeOf=" + sizeOf.deepSizeOf(longA));
     }
 
     public static void charTest() {
@@ -36,9 +47,9 @@ public class SizeOfTest {
     }
 
     public static void longTest() {
-        long var1 = -129;
-        long var2 = -128;
-        long var3 = 9223372036854775807L;
+        long var1 = -129L;
+        Long var2 = -128L;
+        Long var3 = 9223372036854775807L;
         SizeOf sizeOf = SizeOf.newInstance();
         System.out.println("sizeOf=" + sizeOf.sizeOf(var1) + "    deepSizeOf=" + sizeOf.deepSizeOf(var1));
         System.out.println("sizeOf=" + sizeOf.sizeOf(var2) + "    deepSizeOf=" + sizeOf.deepSizeOf(var2));
